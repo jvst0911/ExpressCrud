@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heros</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>List of Heros</h1>
+    <p>Heros already registered</p>
+
+    <table>
+      <thead>
+        <tr style="background-color: #ccc">
+          <td>Name</td>
+          <td>FirstSpell</td>
+          <td>SecondSpell</td>
+          <td>ThirdSpell</td>
+          <td>UltimateSpell</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if (!heros || heros.length == 0 ){ %>
+        <tr>
+          <td colspan="4">Nenhum registro cadastrado</td>
+        </tr>
+        <% } else { heros.forEach(function(hero){ %>
+        <tr>
+          <td><%= hero.name %></td>
+          <td><%= hero.firstspell %></td>
+          <td><%= hero.secondspell %></td>
+          <td><%= hero.thirdspell %></td>
+          <td><%= hero.ultimatespell %></td>
+          <td>
+            <a href="/updateHero/<%= hero.code%>">Alterar</a> |
+            <a href="/deleteHero/<%= hero.code%>" onclick="return confirm('confirm delete?');">Delete</a>
+          </td>
+        </tr>
+        <% })} %>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <br />
+            <a href="/newHero">New Hero</a>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

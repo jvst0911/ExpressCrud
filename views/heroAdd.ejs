@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heros</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Create a new hero</p>
+
+    <form action="<%=action%>" method="POST">
+      <table>
+        <tr>
+          <td>Name</td>
+          <td><input name="name" /></td>
+        </tr>
+        <tr>
+          <td>First Spell</td>
+          <td><input name="firstspell" /></td>
+        </tr>
+        <tr>
+          <td>Second Spell</td>
+          <td><input name="secondspell" /></td>
+        </tr>
+        <tr>
+          <td>Third Spell</td>
+          <td><input name="thirdspell" /></td>
+        </tr>
+        <tr>
+          <td>Ultimate Spell</td>
+          <td><input name="ultimatespell" /></td>
+        </tr>
+        <tr>
+          <td><a href="/">Cancel</a></td>
+          <td><input type="submit" value="Save"/></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
